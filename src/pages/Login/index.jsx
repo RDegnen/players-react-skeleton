@@ -4,7 +4,7 @@ import ReactRouterPropTypes from 'react-router-prop-types';
 import { FormGroup, Label, Button } from 'reactstrap';
 
 import constants from '../../constants';
-import InputForm from '../../components/InputForm';
+import FormContainer from '../../components/FormContainer';
 
 const loginUser = (data, history) =>
   fetch(`${constants.API_URL}/api/login`, {
@@ -43,35 +43,9 @@ const formGroups = [
   },
 ];
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleInput({ target }) {
-    const { name, value } = target;
-    this.setState({ [name]: value });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    const { history } = this.props;
-    loginUser(this.state, history);
-  }
-
-  render() {
-    return (
-      <InputForm
-        formGroups={formGroups}
-        handleInput={this.handleInput}
-        handleSubmit={this.handleSubmit}
-      />
-    );
-  }
-}
+const Login = ({ history }) => (
+  <FormContainer history={history} formGroups={formGroups} submitAction={loginUser} />
+);
 
 Login.propTypes = {
   history: ReactRouterPropTypes.history.isRequired,
