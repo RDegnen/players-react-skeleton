@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Roster from './pages/Roster';
+import Login from './pages/Login';
 
 const pages = [
   {
@@ -18,6 +19,10 @@ const pages = [
   {
     path: '/roster',
     component: Roster,
+  },
+  {
+    path: '/login',
+    component: Login,
   },
 ];
 
