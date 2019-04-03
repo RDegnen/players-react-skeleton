@@ -82,6 +82,11 @@ exports[`<InputForm /> should match snapshot 1`] = `
           type="password"
         />
       </FormGroup>
+      <FormGroup
+        tag="div"
+      >
+        Test
+      </FormGroup>
     </Form>
   </Col>
   <Col

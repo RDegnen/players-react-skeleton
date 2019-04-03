@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { FormGroup } from 'reactstrap';
 
 import InputForm from '../../src/components/InputForm';
 
@@ -18,7 +19,11 @@ const defaultProps = {
       label: 'Password',
     },
     {
-      renderGroup: jest.fn(),
+      renderGroup: () => (
+        <FormGroup>
+          Test
+        </FormGroup>
+      ),
     },
   ],
   handleInput: jest.fn(),
@@ -31,5 +36,10 @@ describe('<InputForm />', () => {
   it('should match snapshot', () => {
     const component = getComponent();
     expect(component).toMatchSnapshot();
+  });
+
+  it('should have the correct amount of FormGroups', () => {
+    const component = getComponent();
+    expect(component.find(FormGroup).length).toBe(3);
   });
 });
