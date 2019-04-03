@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 
 import constants from '../../constants';
 
@@ -8,6 +8,7 @@ class Roster extends React.Component {
     super(props);
     this.state = { players: [] };
     this.getRoster = this.getRoster.bind(this);
+    this.deletePlayer = this.deletePlayer.bind(this);
   }
 
   componentDidMount() {
@@ -25,10 +26,23 @@ class Roster extends React.Component {
       .catch(err => err);
   }
 
+  deletePlayer(playerId) {
+    const authToken = localStorage.getItem('token');
+    return fetch(`${constants.API_URL}/api/players/${playerId}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: authToken,
+      },
+    }).then(res => res.json())
+      .then(() => this.getRoster())
+      .catch(err => err);
+  }
+
   render() {
     const { players } = this.state;
     return (
       <Fragment>
+        <div>Roster</div>
         {players.map(({
           first_name: firstName,
           handedness,
@@ -41,6 +55,9 @@ class Roster extends React.Component {
             <Col>{lastName}</Col>
             <Col>{handedness}</Col>
             <Col>{rating}</Col>
+            <Col>
+              <Button className="delete" onClick={() => this.deletePlayer(id)}>Delete</Button>
+            </Col>
           </Row>
         ))}
       </Fragment>
