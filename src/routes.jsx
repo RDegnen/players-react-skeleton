@@ -2,32 +2,39 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Register from './pages/Register';
+import RegisterPage from './pages/Register';
 import Roster from './pages/Roster';
-import Login from './pages/Login';
-import NewPlayer from './pages/Player/NewPlayer';
+import LoginPage from './pages/Login';
+import NewPlayerPage from './pages/Player/NewPlayer';
 
-const pages = [
+export const pages = [
   {
     path: '/',
     component: Home,
     exact: true,
+    name: 'Home',
   },
   {
     path: '/register',
-    component: Register,
+    component: RegisterPage,
+    name: 'Register',
   },
   {
     path: '/roster',
     component: Roster,
+    nav: true,
+    name: 'Roster',
   },
   {
     path: '/login',
-    component: Login,
+    component: LoginPage,
+    name: 'Login',
   },
   {
     path: '/player/new',
-    component: NewPlayer,
+    component: NewPlayerPage,
+    nav: true,
+    name: 'New Player',
   },
 ];
 
