@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ReactRouterPropTypes from 'react-router-prop-types';
-import { FormGroup, Label, Button } from 'reactstrap';
+import { FormGroup, Button } from 'reactstrap';
 
 import constants from '../../constants';
 import FormContainer from '../../components/FormContainer';
@@ -35,9 +35,8 @@ const formGroups = [
   },
   {
     renderGroup: () => (
-      <FormGroup row>
-        <Label for="login">Login</Label>
-        <Button type="submit" value="Submit" id="login">Submit</Button>
+      <FormGroup className="justify-content-center" row>
+        <Button type="submit" value="Submit" id="login">Login</Button>
       </FormGroup>
     ),
   },

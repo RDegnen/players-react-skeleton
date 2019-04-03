@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormContainer /> should match snapshot 1`] = `
+<InputForm
+  formGroups={
+    Array [
+      Object {
+        "field": "email",
+        "id": "email",
+        "label": "Email",
+        "type": "email",
+      },
+      Object {
+        "field": "password",
+        "id": "password",
+        "label": "Password",
+        "type": "password",
+      },
+      Object {
+        "renderGroup": [MockFunction],
+      },
+    ]
+  }
+  handleInput={[Function]}
+  handleSubmit={[Function]}
+/>
+`;

@@ -1,7 +1,26 @@
 import React, { Fragment } from 'react';
-import { Row, Col, Button } from 'reactstrap';
+import { Button, Table } from 'reactstrap';
 
 import constants from '../../constants';
+
+const columns = [
+  {
+    header: 'First Name',
+    value: ({ first_name: firstName }) => firstName,
+  },
+  {
+    header: 'Last Name',
+    value: ({ last_name: lastName }) => lastName,
+  },
+  {
+    header: 'Handedness',
+    value: ({ handedness }) => handedness,
+  },
+  {
+    header: 'Rating',
+    value: ({ rating }) => rating,
+  },
+];
 
 class Roster extends React.Component {
   constructor(props) {
@@ -22,7 +41,7 @@ class Roster extends React.Component {
         Authorization: authToken,
       },
     }).then(res => res.json())
-      .then(json => this.setState({ players: json.players }))
+      .then(json => this.setState({ players: [...json.players] }))
       .catch(err => err);
   }
 
@@ -42,24 +61,28 @@ class Roster extends React.Component {
     const { players } = this.state;
     return (
       <Fragment>
-        <div>Roster</div>
-        {players.map(({
-          first_name: firstName,
-          handedness,
-          id,
-          last_name: lastName,
-          rating,
-        }) => (
-          <Row key={id}>
-            <Col>{firstName}</Col>
-            <Col>{lastName}</Col>
-            <Col>{handedness}</Col>
-            <Col>{rating}</Col>
-            <Col>
-              <Button className="delete" onClick={() => this.deletePlayer(id)}>Delete</Button>
-            </Col>
-          </Row>
-        ))}
+        <h2>Roster</h2>
+        <Table responsive>
+          <thead>
+            <tr>
+              {columns.map(({ header }) => (
+                <th key={header}>
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          {players.map(player => (
+            <tr key={player.id}>
+              {columns.map(({ header, value }) => (
+                <td key={header}>{value(player)}</td>
+              ))}
+              <td key={`${player.id}Delete`}>
+                <Button className="delete" onClick={() => this.deletePlayer(player.id)}>Delete</Button>
+              </td>
+            </tr>
+          ))}
+        </Table>
       </Fragment>
     );
   }

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "babel-preset-react-app": "^3.1.1",
+    "bootstrap": "^4.3.1",
     "cross-env": "^5.2.0",
     "cypress": "^3.2.0",
     "enzyme": "^3.9.0",
@@ -45,6 +46,9 @@
     "testPathIgnorePatterns": [
       "/tests/e2e/"
     ],
-    "setupTestFrameworkScriptFile": "./tests/unit/setupTest.js"
+    "setupTestFrameworkScriptFile": "./tests/unit/config/setupTest.js",
+    "moduleNameMapper": {
+      "\\.(css|jpg|png)$": "<rootDir>/tests/unit/config/cssStub.js"
+    }
   }
 }
