@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 
+import componentProps from '../props';
+
 const InputForm = ({ formGroups, handleInput, handleSubmit }) => (
   <Form onSubmit={handleSubmit}>
     {formGroups.map(({
@@ -29,13 +31,7 @@ const InputForm = ({ formGroups, handleInput, handleSubmit }) => (
 );
 
 InputForm.propTypes = {
-  formGroups: PropTypes.arrayOf(PropTypes.shape({
-    field: PropTypes.string,
-    type: PropTypes.string,
-    id: PropTypes.string,
-    label: PropTypes.string,
-    renderGroup: PropTypes.func,
-  })).isRequired,
+  formGroups: componentProps.formGroupShape.isRequired,
   handleInput: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
 };

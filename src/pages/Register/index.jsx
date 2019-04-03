@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import ReactRouterPropTypes from 'react-router-prop-types';
 
 import constants from '../../constants';
-import InputForm from '../../components/InputForm';
+import FormContainer from '../../components/FormContainer';
 
 const createUser = (data, history) =>
   fetch(`${constants.API_URL}/api/user`, {
@@ -61,34 +61,9 @@ const formGroups = [
   },
 ];
 
-class Register extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleInput({ target }) {
-    const { name, value } = target;
-    this.setState({ [name]: value });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    const { history } = this.props;
-    createUser(this.state, history);
-  }
-  render() {
-    return (
-      <InputForm
-        formGroups={formGroups}
-        handleInput={this.handleInput}
-        handleSubmit={this.handleSubmit}
-      />
-    );
-  }
-}
+export const Register = ({ history }) => (
+  <FormContainer history={history} formGroups={formGroups} submitAction={createUser} />
+);
 
 Register.propTypes = {
   history: ReactRouterPropTypes.history.isRequired,

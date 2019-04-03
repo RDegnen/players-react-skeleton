@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import Roster from './pages/Roster';
 import Login from './pages/Login';
+import NewPlayer from './pages/Player/NewPlayer';
 
 const pages = [
   {
@@ -23,6 +24,10 @@ const pages = [
   {
     path: '/login',
     component: Login,
+  },
+  {
+    path: '/player/new',
+    component: NewPlayer,
   },
 ];
 

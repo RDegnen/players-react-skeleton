@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Login } from '../../src/pages/Login';
+import { NewPlayer } from '../../src/pages/Player/NewPlayer';
 
-const getComponent = props => shallow(<Login history={{}} {...props} />);
+const getComponent = props => shallow(<NewPlayer history={{}} {...props} />);
 
-describe('<Login />', () => {
+describe('<NewPlayer />', () => {
   it('should match snapshot', () => {
     const component = getComponent();
     expect(component).toMatchSnapshot();
