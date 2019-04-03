@@ -12,7 +12,7 @@ const NavigationBar = ({ routes }) => (
         if (!nav) return null;
         return (
           <NavItem>
-            <NavLink href={`${path}`}>{name}</NavLink>
+            <NavLink href={path}>{name}</NavLink>
           </NavItem>
         );
       })}

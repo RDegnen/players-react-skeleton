@@ -1,5 +1,8 @@
 # Alchemy React Test
 
+## Ross' Notes
+I have added some tests with jest, to run them use `npm run test`.
+
 ## Background
 The engineering team at Alchemy has built an (imaginary) game management platform.
 The platform has an API that allows you to create a manager(user) that allows them 
