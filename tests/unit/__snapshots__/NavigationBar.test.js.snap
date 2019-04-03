@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavigationBar /> should match snapshot 1`] = `
+<Navbar
+  expand={false}
+  tag="nav"
+>
+  <NavbarBrand
+    href="/"
+    tag="a"
+  >
+    <h2>
+      Players App
+    </h2>
+  </NavbarBrand>
+  <Nav
+    tag="ul"
+    vertical={false}
+  >
+    <NavItem
+      tag="li"
+    >
+      <NavLink
+        href="/roster"
+        tag="a"
+      >
+        Roster
+      </NavLink>
+    </NavItem>
+    <NavItem
+      tag="li"
+    >
+      <NavLink
+        href="/player/new"
+        tag="a"
+      >
+        New Player
+      </NavLink>
+    </NavItem>
+  </Nav>
+</Navbar>
+`;
