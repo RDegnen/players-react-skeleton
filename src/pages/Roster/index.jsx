@@ -38,7 +38,7 @@ class Roster extends React.Component {
     const authToken = localStorage.getItem('token');
     return fetch(`${constants.API_URL}/api/players`, {
       headers: {
-        Authorization: authToken,
+        Authorization: `Bearer ${authToken}`,
       },
     }).then(res => res.json())
       .then(json => this.setState({ players: [...json.players] }))
@@ -50,7 +50,7 @@ class Roster extends React.Component {
     return fetch(`${constants.API_URL}/api/players/${playerId}`, {
       method: 'DELETE',
       headers: {
-        Authorization: authToken,
+        Authorization: `Bearer ${authToken}`,
       },
     }).then(res => res.json())
       .then(() => this.getRoster())

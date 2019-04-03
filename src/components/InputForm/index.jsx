@@ -14,7 +14,7 @@ const InputForm = ({ formGroups, handleInput, handleSubmit }) => (
         }) => (
           <Fragment key={field}>
             {renderGroup ? (
-              renderGroup()
+              renderGroup(handleInput)
             ) : (
               <FormGroup key={`${field}Group`} row>
                 <Label key={`${field}Label`} for={field}>{label}</Label>

@@ -20,7 +20,7 @@ exports[`<NewPlayer /> should match snapshot 1`] = `
         "field": "rating",
         "id": "rating",
         "label": "Rating",
-        "type": "text",
+        "type": "number",
       },
       Object {
         "renderGroup": [Function],

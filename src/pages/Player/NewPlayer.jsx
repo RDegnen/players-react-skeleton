@@ -12,7 +12,7 @@ const createPlayer = (data, history) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: authToken,
+      Authorization: `Bearer ${authToken}`,
     },
     body: JSON.stringify(data),
   }).then(res => res.json())
@@ -37,17 +37,18 @@ const formGroups = [
   },
   {
     field: 'rating',
-    type: 'text',
+    type: 'number',
     id: 'rating',
     label: 'Rating',
   },
   {
-    renderGroup: () => (
+    renderGroup: handleInput => (
       <FormGroup row>
         <Label for="handedness">Handedness</Label>
-        <Input type="select" name="handedness" id="handedness">
-          <option>Left</option>
-          <option>Right</option>
+        <Input type="select" name="handedness" id="handedness" onChange={handleInput}>
+          <option value="" disabled selected>Select a Hand</option>
+          <option>left</option>
+          <option>right</option>
         </Input>
       </FormGroup>
     ),

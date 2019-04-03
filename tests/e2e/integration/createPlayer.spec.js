@@ -20,7 +20,7 @@ describe('Add player page', () => {
     cy.get('#firstName').type('Tom');
     cy.get('#lastName').type('Riddle');
     cy.get('#rating').type('10');
-    cy.get('#handedness').select('Right');
+    cy.get('#handedness').select('right');
     cy.get('#create').click();
     cy.url().should('eq', 'http://localhost:3000/roster');
     cy.contains('Tom');
