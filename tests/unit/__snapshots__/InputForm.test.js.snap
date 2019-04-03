@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputForm /> should match snapshot 1`] = `
+<Row
+  tag="div"
+>
+  <Col
+    className="formCol"
+    m="6"
+    tag="div"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
+  >
+    <Form
+      onSubmit={[MockFunction]}
+      tag="form"
+    >
+      <FormGroup
+        key="emailGroup"
+        row={true}
+        tag="div"
+      >
+        <Label
+          for="email"
+          key="emailLabel"
+          tag="label"
+          widths={
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ]
+          }
+        >
+          Email
+        </Label>
+        <Input
+          id="email"
+          key="emailInput"
+          name="email"
+          onChange={[MockFunction]}
+          placeholder="Email"
+          type="email"
+        />
+      </FormGroup>
+      <FormGroup
+        key="passwordGroup"
+        row={true}
+        tag="div"
+      >
+        <Label
+          for="password"
+          key="passwordLabel"
+          tag="label"
+          widths={
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ]
+          }
+        >
+          Password
+        </Label>
+        <Input
+          id="password"
+          key="passwordInput"
+          name="password"
+          onChange={[MockFunction]}
+          placeholder="Password"
+          type="password"
+        />
+      </FormGroup>
+    </Form>
+  </Col>
+  <Col
+    m="6"
+    tag="div"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
+  />
+</Row>
+`;

@@ -2,8 +2,38 @@
 
 exports[`<Roster /> should match snapshot 1`] = `
 <Fragment>
-  <div>
+  <h2>
     Roster
-  </div>
+  </h2>
+  <Table
+    responsive={true}
+    responsiveTag="div"
+    tag="table"
+  >
+    <thead>
+      <tr>
+        <th
+          key="First Name"
+        >
+          First Name
+        </th>
+        <th
+          key="Last Name"
+        >
+          Last Name
+        </th>
+        <th
+          key="Handedness"
+        >
+          Handedness
+        </th>
+        <th
+          key="Rating"
+        >
+          Rating
+        </th>
+      </tr>
+    </thead>
+  </Table>
 </Fragment>
 `;

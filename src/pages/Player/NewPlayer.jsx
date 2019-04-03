@@ -54,9 +54,8 @@ const formGroups = [
   },
   {
     renderGroup: () => (
-      <FormGroup row>
-        <Label for="create">Create</Label>
-        <Button type="submit" value="Submit" id="create">Submit</Button>
+      <FormGroup className="justify-content-center" row>
+        <Button type="submit" value="Submit" id="create">Create</Button>
       </FormGroup>
     ),
   },
