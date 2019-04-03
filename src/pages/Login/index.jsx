@@ -43,7 +43,7 @@ const formGroups = [
   },
 ];
 
-const Login = ({ history }) => (
+export const Login = ({ history }) => (
   <FormContainer history={history} formGroups={formGroups} submitAction={loginUser} />
 );
 

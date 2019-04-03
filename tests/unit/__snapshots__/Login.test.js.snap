@@ -1,7 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Login /> should match snapshot 1`] = `
-<Route>
-  <Component />
-</Route>
+<FormContainer
+  formGroups={
+    Array [
+      Object {
+        "field": "email",
+        "id": "email",
+        "label": "Email",
+        "type": "email",
+      },
+      Object {
+        "field": "password",
+        "id": "password",
+        "label": "Password",
+        "type": "password",
+      },
+      Object {
+        "renderGroup": [Function],
+      },
+    ]
+  }
+  history={Object {}}
+  submitAction={[Function]}
+/>
 `;

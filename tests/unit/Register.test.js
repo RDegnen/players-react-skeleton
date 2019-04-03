@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Register from '../../src/pages/Register';
+import { Register } from '../../src/pages/Register';
 
 const getComponent = props => shallow(<Register history={{}} {...props} />);
 

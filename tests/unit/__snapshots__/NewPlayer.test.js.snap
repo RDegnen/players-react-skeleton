@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Register /> should match snapshot 1`] = `
+exports[`<NewPlayer /> should match snapshot 1`] = `
 <FormContainer
   formGroups={
     Array [
@@ -17,22 +17,13 @@ exports[`<Register /> should match snapshot 1`] = `
         "type": "text",
       },
       Object {
-        "field": "email",
-        "id": "email",
-        "label": "Email",
-        "type": "email",
+        "field": "rating",
+        "id": "rating",
+        "label": "Rating",
+        "type": "text",
       },
       Object {
-        "field": "password",
-        "id": "password",
-        "label": "Password",
-        "type": "password",
-      },
-      Object {
-        "field": "confirm_password",
-        "id": "confirmPassword",
-        "label": "Confirm Password",
-        "type": "password",
+        "renderGroup": [Function],
       },
       Object {
         "renderGroup": [Function],

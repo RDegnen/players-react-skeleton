@@ -61,7 +61,7 @@ const formGroups = [
   },
 ];
 
-const Register = ({ history }) => (
+export const Register = ({ history }) => (
   <FormContainer history={history} formGroups={formGroups} submitAction={createUser} />
 );
 
