@@ -15,7 +15,8 @@ class FormContainer extends React.Component {
 
   handleInput({ target }) {
     const { name, value } = target;
-    this.setState({ [name]: name === 'rating' ? parseInt(value, 10) : value });
+    const numberInputs = ['rating'];
+    this.setState({ [name]: numberInputs.includes(name) ? parseInt(value, 10) : value });
   }
 
   handleSubmit(event) {
